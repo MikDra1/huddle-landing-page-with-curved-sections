@@ -1,0 +1,526 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  font-family: "Poppins", sans-serif;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  /* ### Primary */
+
+  --Pink: hsl(322, 100%, 66%);
+  --Light-Pink: hsl(321, 100%, 78%);
+  --Light-Red: hsl(0, 100%, 63%);
+
+  /* ### Neutral */
+
+  --Very-Dark-Cyan: hsl(192, 100%, 9%);
+  --Very-Pale-Blue: hsl(207, 100%, 98%);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 3%;
+  padding-block: 1.25rem;
+}
+
+.header__img {
+  width: 30%;
+  height: 30%;
+  max-width: 16rem;
+}
+
+.btn--header {
+  background-color: transparent;
+  color: var(--Pink);
+  border: 1px solid var(--Pink);
+  border-radius: 100vw;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.btn--header:hover {
+  box-shadow: 0px 0px 2px var(--Light-Red);
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  gap: 1rem;
+  padding-inline: 1.5rem;
+}
+
+.hero__description {
+  font-size: 0.875rem;
+  max-width: 40rem;
+}
+
+.btn {
+  background-color: var(--Pink);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 100vw;
+  padding: 0.75rem 2.5rem;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.btn:hover {
+  background-color: var(--Light-Pink);
+}
+
+.btn--hero {
+  margin-block: 2rem;
+  margin-bottom: 4rem;
+}
+
+.counts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  margin-top: 5rem;
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: center;
+}
+
+.count__title {
+  font-size: 4rem;
+}
+
+.count__description {
+  color: #b2b5b8;
+  align-self: center;
+}
+
+.featured {
+  position: relative;
+  padding-block: 3rem;
+  margin-top: 5rem;
+  text-align: center;
+  padding-inline: 1.25rem;
+}
+
+.featured--bg {
+  background-color: var(--Very-Pale-Blue);
+}
+
+.featured__title {
+  margin-top: 3rem;
+}
+
+.featured__description {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+.featured__img {
+  width: 100%;
+  max-width: 35rem;
+}
+
+.bg__section__img {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.featured--conversations {
+  padding-block: 7rem;
+}
+
+.bg__section__img__top__mobile {
+  top: -28vw;
+}
+
+.bg__section__img__bottom__mobile {
+  bottom: -13.5vw;
+}
+
+.bg__section__img__bottom__mobile--users {
+  bottom: -25vw;
+}
+
+.bg__section__img__top__mobile--users {
+  top: -25vw;
+}
+
+.bg__section__img__top__desktop--users {
+  top: -10vw;
+  display: none;
+}
+
+.bg__section__img__bottom__desktop--users {
+  bottom: -9vw;
+  display: none;
+}
+
+.bg__section__img__top__desktop {
+  top: -10vw;
+  display: none;
+}
+
+.bg__section__img__bottom__desktop {
+  bottom: -9vw;
+  display: none;
+}
+
+.build__community {
+  padding-block: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.footer {
+  background-color: var(--Very-Dark-Cyan);
+  color: white;
+  position: relative;
+  padding: 1.5rem;
+}
+
+.footer__img {
+  position: absolute;
+  top: -10vw;
+  left: 0;
+  width: 100vw;
+}
+
+.footer__img--desktop {
+  top: -10.5vw;
+  display: none;
+}
+
+.footer__title {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.footer__description {
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: grid;
+  justify-items: end;
+  position: relative;
+}
+
+.form__input {
+  width: 100%;
+  border-radius: 0.25rem;
+  border: none;
+  padding-block: 0.5rem;
+}
+
+.btn--form {
+  background-color: var(--Pink);
+  color: white;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border: none;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.btn--form:hover {
+  background-color: var(--Light-Pink);
+}
+
+.footer__logo {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+}
+
+.element {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+.social {
+  width: 1.5rem;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(39%) saturate(2%)
+    hue-rotate(95deg) brightness(106%) contrast(101%);
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.social:hover {
+  filter: brightness(0) saturate(100%) invert(70%) sepia(28%) saturate(5808%) hue-rotate(150deg) brightness(98%) contrast(108%);
+}
+
+/* ERROR */
+.valid__text {
+  color: var(--Pink);
+  margin-bottom: 0.5rem;
+  opacity: 1;
+  transition: all 0.3s;
+  position: absolute;
+  top: -1.75rem;
+}
+
+.form__input:valid + .valid__text {
+  opacity: 0;
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .hero {
+    margin-top: 10rem;
+  }
+  .header {
+    padding-block: 5rem;
+    padding-inline: 5%;
+  }
+  .hero__description {
+    font-size: 1.20rem;
+    margin-top: .5rem;
+  }
+  .btn--header {
+    padding-inline: 1.5rem;
+    padding-block: .5rem;
+  }
+  .bg__section__img__top__desktop,
+  .bg__section__img__bottom__desktop {
+    display: block;
+  }
+
+  .bg__section__img__top__mobile,
+  .bg__section__img__bottom__mobile {
+    display: none;
+  }
+
+  .bg__section__img__bottom__mobile--users,
+  .bg__section__img__top__mobile--users {
+    display: none;
+  }
+
+  .bg__section__img__bottom__desktop--users,
+  .bg__section__img__top__desktop--users {
+    display: block;
+  }
+
+  .footer__img--mobile {
+    display: none;
+  }
+
+  .footer__img--desktop {
+    display: block;
+  }
+
+  .build__community {
+    padding-block: 17.5rem;
+  }
+
+  .build__community h2 {
+    font-size: 2.5rem;
+  }
+
+  .btn {
+    font-size: 1.25rem;
+    padding-inline: 7vw;
+    padding-block: 1.5rem;
+  }
+  .featured--bg {
+    padding-block: 4rem;
+  }
+
+  .featured--bg,
+  .featured--conversations {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding-inline: 8%;
+    text-align: start;
+  }
+
+  .featured--conversations {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-block: 1rem;
+  }
+
+  .featured--conversations .featured__content {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .featured__title {
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .featured__content {
+    width: 47%;
+    margin-right: auto;
+    max-width: 65ch;
+  }
+
+  .featured__description {
+    font-size: 1rem;
+  }
+  .counts {
+    flex-direction: row;
+    justify-content: center;
+    gap: 22rem;
+    padding-bottom: 10rem;
+    margin-top: 9rem;
+    margin-bottom: 7rem;
+  }
+  .count__title {
+    font-size: 6rem;
+    font-weight: 600;
+  }
+  .count__description {
+    font-size: 1.5rem;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20vw;
+    padding-inline: 8vw;
+    padding-top: 8rem;
+    margin-top: 3rem;
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn--form {
+    margin-top: 0;
+  }
+
+  .footer__description {
+    width: 70%;
+
+  }
+
+  .footer__title {
+    font-size: 1.75rem;
+  }
+
+  .social {
+    width: 1.75rem;
+  }
+
+  .socials {
+    gap: 1.25rem;
+  }
+
+  .footer__logo {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .valid__text {
+    top: auto;
+    bottom: -2rem;
+  }
+  .featured--conversations {
+    padding-block: 11rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  .featured--conversations {
+    padding-block: 15rem;
+  }
+  .build__community {
+    padding-block: 20rem;
+  }
+}
